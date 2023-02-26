@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Gensim Summarizer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
+  <style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: "Raleway", sans-serif;
+    }
+
+    body {
+      background-color: goldenrod;
+    }
+
+    p {
+      font-weight: bold;
+      color: black;
+      font-size: medium;
+    }
+
+    a:link,
+    a:visited {
+      background-color: #f44336;
+      color: white;
+      padding: 14px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    a:hover,
+    a:active {
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="w3-content" style="max-width: 1400px">
+    <!-- Header -->
+    <header class="w3-container w3-center w3-padding-32" id="head">
+      <img a style="height: 20vh; width: fit-content" src="https://miro.medium.com/max/592/0*zKRz1UgqpOZ4bvuA" alt="" />
+      <p>
+        Know everything on NLTK <span class="w3-tag">The Python Library</span>
+      </p>
+    </header>
+    <!-- Grid -->
+    <div class="w3-row">
+      <!-- y nltk -->
+      <div id="home" class="w3-col l8 s12">
+        <!-- Why Gensim Summarisation -->
+        <div class="w3-card-4 w3-margin w3-purple">
+          <div class="w3-container">
+            <u>
+              <h3><b>Why Gensim Summarizer?</b></h3>
+              <h5>What is Text Summarization</h5>
+            </u>
+          </div>
+          <div class="w3-container">
+            <img src="demo.webp" alt="Nature" style="width: 100%" />
+            <p>
+              Text summarization is one of the newest and most exciting fields in NLP, allowing for developers to
+              quickly find meaning and extract key words and phrases from documents.
+
+            </p>
+          </div>
+        </div>
+        <hr />
+        <!-- Text and NLP -->
+        <div class="w3-card-4 w3-margin w3-purple">
+          <img src="textan.jpeg" alt="Nature" style="width: 100%" />
+          <div class="w3-container">
+            <h3>
+              <b> <u> Genism Summarization </u></b>
+            </h3>
+          </div>
+          <div class="w3-container">
+            <p>
+              Gensim is an open-source library for unsupervised topic modeling, document indexing, retrieval by
+              similarity, and other natural language processing functionalities, using modern statistical machine
+              learning.
+
+              Gensim is implemented in Python and Cython for performance. Gensim is designed to handle large text
+              collections using data streaming and incremental online algorithms, which differentiates it from most
+              other machine learning software packages that target only in-memory processing
+            </p>
+          </div>
+        </div>
+        <hr />
+        <!--Uses of Genism and code-->
+        <div class="w3-card-4 w3-margin w3-purple">
+          <img src="stem.jpeg" alt="Nature" style="width: 100%" />
+          <div class="w3-container">
+            <h3>
+              <b> <u> Uses of Genism </u></b>
+            </h3>
+          </div>
+          <div class="w3-container">
+            <p>
+              Gensim has been used and cited in over 1400 commercial and academic applications as of 2018,in a diverse
+              array of disciplines from medicine to insurance claim analysis to patent search. The software has been
+              covered in several new articles, podcasts and interviews
+            </p>
+            <p style="background-color: burlywood; padding-left: 1em">
+              <u> CODE :-</u>
+            </p>
+            <p style="background-color: antiquewhite; padding-left: 0.4em">
+              <br />
+              from gensim.summarization.summarizer import summarize
+              <br />from gensim.summarization import keywords <br />
+              import wikipedia <br />
+              import en_core_web_sm <br />
+
+              wikisearch = wikipedia.page("Amitabh Bachchan")
+              wikicontent = wikisearch.content
+              nlp = en_core_web_sm.load()
+              doc = nlp(wikicontent)
+
+              f = open("wikicontent.txt", "w")
+              f.write(wikicontent)
+              f.close()
+
+              summ_per = summarize(wikicontent, ratio = 0.05)
+              print("Percent summary")
+              print(summ_per)
+
+              summ_words = summarize(wikicontent, word_count = 200)
+              print("Word count summary")
+              print(summ_words)
+            </p>
+            <p style="background-color: burlywood; padding-left: 1em">
+              <u> OUTPUT</u>
+            </p>
+            <p style="background-color: antiquewhite; padding-left: 0.4em">
+              Percent summary
+              Amitabh Bachchan (pronounced [?m??ta?b? ?b?t???n]; born Inquilaab Srivastava;
+              11 October 1942) is an Indian film actor, film producer, television host,
+              occasional playback singer and former politician. He first gained popularity
+              in the early 1970s for films such as Zanjeer, Deewaar and Sholay, and was
+              dubbed India's "angry young man" for his on-screen roles in Bollywood.
+              .
+              .
+              .
+              Apart from National Film Awards, Filmfare Awards and other competitive awards
+              which Bachchan won for his performances throughout the years, he has been
+              awarded several honours for his achievements in the Indian film industry.
+              </br>
+              Word count summary
+              Beyond the Indian subcontinent, he also has a large overseas following
+              in markets including Africa (such as South Africa), the Middle East
+              (especially Egypt), United Kingdom, Russia and parts of the United
+              States. Bachchan has won numerous accolades in his career, including
+              four National Film Awards as Best Actor and many awards at
+              international film festivals and award ceremonies.
+              .
+              .
+              .
+              After a three year stint in politics from 1984 to 1987, Bachchan
+              returned to films in 1988, playing the title role in Shahenshah,
+              which was a box office success
+            </p>
+          </div>
+        </div>
+        <!-- END BLOG ENTRIES -->
+      </div>
+      <div class="w3-col l4">
+        <!-- Side Card -->
+        <div id="token" class="w3-card w3-margin w3-margin-top">
+          <img src="senti.png" style="width: 100%" />
+        </div>
+        <hr />
+        <!-- END Introduction Menu -->
+      </div>
+
+
+
+      <!-- Footer -->
+      <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+        <p style="text-align: center">
+          <a href="https://rare-technologies.com/text-summarization-with-gensim/" target="_blank">To know more..</a>
+        </p>
+        <p style="text-align: right">By Siddhesh</p>
+      </footer>
+</body>
+
+</html
